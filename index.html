@@ -104,6 +104,7 @@
   .location-switch { display: inline-flex; gap: 6px; margin: 26px 0 0; padding: 5px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--color-surface) 82%, #fff); }
   .location-switch button { min-height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 70%, var(--color-bg)); font-family: var(--font-heading); font-weight: 600; font-size: 13px; cursor: pointer; transition: background .2s ease, color .2s ease, box-shadow .2s ease; }
   .location-switch button[aria-pressed="true"] { background: var(--color-accent-900); color: #fff; box-shadow: var(--shadow-sm); }
+  .location-panel[hidden], .location-map[hidden], .location-link[hidden] { display: none !important; }
   .map-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--color-surface); min-height: clamp(320px, 38vw, 420px); }
   .map-frame iframe { display: block; width: 100%; height: clamp(320px, 38vw, 420px); border: 0; }
   @media (min-width: 900px) {
@@ -120,7 +121,7 @@
         <img src="img/logo-sousa-contabilidade.jpg" alt="Marca Sousa Contabilidade" width="150" height="150" style="width: 40px; height: 40px; object-fit: contain; mix-blend-mode: multiply;">
         <span style="display: flex; flex-direction: column; line-height: 1;">
           <span style="font-family: var(--font-heading); font-weight: 600; font-size: 17px; letter-spacing: .01em; color: var(--color-text);">Sousa Contabilidade</span>
-          <span style="font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 4px;">Feira de Santana — BA</span>
+          <span style="font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 4px;">Feira de Santana e Andaraí — BA</span>
         </span>
       </a>
       <nav aria-label="Navegação principal" style="display: none; gap: 30px; align-items: center;" data-om-navdesk="1">
@@ -353,8 +354,8 @@
             Escolha a unidade mais próxima e fale pelo WhatsApp com quem pode orientar sua empresa.
           </p>
           <div class="location-switch" role="group" aria-label="Escolher unidade">
-            <button type="button" onClick="{{ showFeira }}" aria-pressed="{{ feiraActive }}">Feira de Santana</button>
-            <button type="button" onClick="{{ showAndarai }}" aria-pressed="{{ andaraiActive }}">Andaraí</button>
+            <button type="button" data-location-choice="feira" aria-pressed="true">Feira de Santana</button>
+            <button type="button" data-location-choice="andarai" aria-pressed="false">Andaraí</button>
           </div>
 
           <div class="contact-card">
@@ -372,39 +373,27 @@
             </div>
             <div class="contact-line">
               <span class="contact-icon">03</span>
-              <sc-if value="{{ feiraActive }}" hint-placeholder-val="{{ true }}">
-                <address style="margin: 0; font-style: normal;">
-                  Edifício J &amp; C Comercial<br>
-                  R. Los Ângeles, 38 - Sala 03<br>
-                  Parque Getúlio Vargas, Feira de Santana/BA
-                </address>
-              </sc-if>
-              <sc-if value="{{ andaraiActive }}" hint-placeholder-val="{{ false }}">
-                <address style="margin: 0; font-style: normal;">
-                  Rua da Glória, nº 58<br>
-                  Andaraí/BA<br>
-                  CEP 46830-000
-                </address>
-              </sc-if>
+              <address class="location-panel" data-location-panel="feira" style="margin: 0; font-style: normal;">
+                Edifício J &amp; C Comercial<br>
+                R. Los Ângeles, 38 - Sala 03<br>
+                Parque Getúlio Vargas, Feira de Santana/BA
+              </address>
+              <address class="location-panel" data-location-panel="andarai" hidden style="margin: 0; font-style: normal;">
+                Rua da Glória, nº 58<br>
+                Andaraí/BA<br>
+                CEP 46830-000
+              </address>
             </div>
           </div>
         </div>
 
         <div>
           <div class="map-frame">
-            <sc-if value="{{ feiraActive }}" hint-placeholder-val="{{ true }}">
-              <iframe title="Mapa da unidade de Feira de Santana da Sousa Contabilidade" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            </sc-if>
-            <sc-if value="{{ andaraiActive }}" hint-placeholder-val="{{ false }}">
-              <iframe title="Mapa da unidade de Andaraí da Sousa Contabilidade" src="https://www.google.com/maps?q=Rua%20da%20Gl%C3%B3ria%2C%2058%2C%20Andara%C3%AD%2C%20BA%2C%2046830-000&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-            </sc-if>
+            <iframe class="location-map" data-location-map="feira" title="Mapa da unidade de Feira de Santana da Sousa Contabilidade" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <iframe class="location-map" data-location-map="andarai" hidden title="Mapa da unidade de Andaraí da Sousa Contabilidade" src="https://www.google.com/maps?q=Rua%20da%20Gl%C3%B3ria%2C%2058%2C%20Andara%C3%AD%2C%20BA%2C%2046830-000&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
           </div>
-          <sc-if value="{{ feiraActive }}" hint-placeholder-val="{{ true }}">
-            <a href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir Feira no Google Maps</a>
-          </sc-if>
-          <sc-if value="{{ andaraiActive }}" hint-placeholder-val="{{ false }}">
-            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20da%20Gl%C3%B3ria%2C%2058%2C%20Andara%C3%AD%2C%20BA%2C%2046830-000" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir Andaraí no Google Maps</a>
-          </sc-if>
+          <a class="location-link" data-location-link="feira" href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir Feira no Google Maps</a>
+          <a class="location-link" data-location-link="andarai" hidden href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20da%20Gl%C3%B3ria%2C%2058%2C%20Andara%C3%AD%2C%20BA%2C%2046830-000" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir Andaraí no Google Maps</a>
         </div>
       </div>
     </section>
@@ -492,8 +481,8 @@ class Component extends DCLogic {
       closeMenu: () => this.setState({ menuOpen: false }),
       toggleWa: () => this.setState(s => ({ waOpen: !s.waOpen })),
       closeWa: () => this.setState({ waOpen: false }),
-      showFeira: () => this.setState({ location: 'feira' }),
-      showAndarai: () => this.setState({ location: 'andarai' }),
+      showFeira: () => this.showLocation('feira'),
+      showAndarai: () => this.showLocation('andarai'),
       playIntroVideo: () => {
         const video = document.querySelector('[data-intro-video]');
         const cover = document.querySelector('[data-video-cover]');
@@ -507,10 +496,42 @@ class Component extends DCLogic {
     };
   }
 
+  applyLocation(name = this.state.location) {
+    const root = document.body;
+    root.querySelectorAll('[data-location-choice]').forEach((button) => {
+      button.setAttribute('aria-pressed', button.getAttribute('data-location-choice') === name ? 'true' : 'false');
+    });
+    root.querySelectorAll('[data-location-panel]').forEach((panel) => {
+      panel.hidden = panel.getAttribute('data-location-panel') !== name;
+    });
+    root.querySelectorAll('[data-location-map]').forEach((map) => {
+      map.hidden = map.getAttribute('data-location-map') !== name;
+    });
+    root.querySelectorAll('[data-location-link]').forEach((link) => {
+      link.hidden = link.getAttribute('data-location-link') !== name;
+    });
+  }
+
+  showLocation(name) {
+    this.setState({ location: name });
+    this.applyLocation(name);
+  }
+
+  componentDidUpdate() {
+    this.applyLocation();
+  }
+
   componentDidMount() {
     const root = document.body;
     const header = root.querySelector('[data-om-header]');
     const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const locationButtons = Array.from(root.querySelectorAll('[data-location-choice]'));
+    this._locationHandlers = locationButtons.map((button) => {
+      const handler = () => this.showLocation(button.getAttribute('data-location-choice'));
+      button.addEventListener('click', handler);
+      return { button, handler };
+    });
+    this.applyLocation();
 
     const onScroll = () => {
       if (!header) return;
@@ -612,6 +633,9 @@ class Component extends DCLogic {
     if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
     if (this._applyLayout) window.removeEventListener('resize', this._applyLayout);
     if (this._io) this._io.disconnect();
+    if (this._locationHandlers) {
+      this._locationHandlers.forEach(({ button, handler }) => button.removeEventListener('click', handler));
+    }
   }
 }
 </script>
