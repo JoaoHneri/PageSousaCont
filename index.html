@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="_ds/broadsheet-d8bdd8bd-af87-48b3-873f-3094a05d1a1e/styles.css">
 <script src="_ds/broadsheet-d8bdd8bd-af87-48b3-873f-3094a05d1a1e/_ds_bundle.js"></script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AccountingService","name":"Sousa Contabilidade","image":"img/equipe-fachada.jpg","address":{"@type":"PostalAddress","streetAddress":"R. Los Ângeles, 38 - Sala 03, Edifício J & C Comercial","addressLocality":"Feira de Santana","addressRegion":"BA","postalCode":"44076-696","addressCountry":"BR"},"areaServed":"Feira de Santana - BA","sameAs":["https://www.instagram.com/sousacontab/","https://www.facebook.com/sousacontab/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"2"}}
+{"@context":"https://schema.org","@type":"AccountingService","name":"Sousa Contabilidade","image":"img/equipe-fachada.jpg","address":{"@type":"PostalAddress","streetAddress":"R. Los Ângeles, 38 - Sala 03, Edifício J & C Comercial","addressLocality":"Feira de Santana","addressRegion":"BA","postalCode":"44076-696","addressCountry":"BR"},"areaServed":"Feira de Santana - BA","sameAs":["https://www.instagram.com/sousacontab/","https://www.facebook.com/sousacontab/?ref=PROFILE_EDIT_xav_ig_profile_page_web#"]}
 </script>
 <style>
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
@@ -83,6 +83,9 @@
   .contact-card a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
   .contact-line { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 15.5px; line-height: 1.55; }
   .contact-icon { width: 24px; color: var(--color-accent-300); font-family: var(--font-heading); font-weight: 600; text-align: center; }
+  .location-switch { display: inline-flex; gap: 6px; margin: 26px 0 0; padding: 5px; border: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent); border-radius: 999px; background: color-mix(in srgb, var(--color-surface) 82%, #fff); }
+  .location-switch button { min-height: 38px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: color-mix(in srgb, var(--color-text) 70%, var(--color-bg)); font-family: var(--font-heading); font-weight: 600; font-size: 13px; cursor: pointer; transition: background .2s ease, color .2s ease, box-shadow .2s ease; }
+  .location-switch button[aria-pressed="true"] { background: var(--color-accent-900); color: #fff; box-shadow: var(--shadow-sm); }
   .map-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--color-surface); min-height: clamp(320px, 38vw, 420px); }
   .map-frame iframe { display: block; width: 100%; height: clamp(320px, 38vw, 420px); border: 0; }
   @media (min-width: 900px) {
@@ -175,7 +178,7 @@
       <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4.5vw, 56px);" data-om-probgrid="1">
         <div data-reveal="1">
           <p class="eyebrow"><span class="idx">02</span><span class="rule"></span>O problema</p>
-          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em;  text-wrap: pretty;">Contabilidade não precisa ser uma dor de cabeça.</h2>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 42px); line-height: 1.14; letter-spacing: -0.015em;  text-wrap: pretty;">Contabilidade não precisa ser uma dor de cabeça.</h2>
           <ul class="ruled-list" style="margin-top: clamp(28px, 4vw, 40px); max-width: 46ch;">
             <li><span class="num">01</span><span style="font-size: 16px; align-self: center;">Impostos que ninguém explica direito</span></li>
             <li><span class="num">02</span><span style="font-size: 16px; align-self: center;">Obrigações e prazos correndo por fora</span></li>
@@ -200,7 +203,7 @@
       <div style="max-width: 1280px; margin: 0 auto;">
         <div data-reveal="1" style="max-width: 860px; margin-bottom: clamp(28px, 4vw, 44px);">
           <p class="eyebrow"><span class="idx">03</span><span class="rule"></span>Serviços</p>
-          <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 52px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Toda a parte contábil, do início ao fim.</h2>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 42px); line-height: 1.14; letter-spacing: -0.015em; text-wrap: balance;">Toda a parte contábil, do início ao fim.</h2>
         </div>
         <div data-reveal="1" class="svc-grid">
           <div class="svc-row"><span class="svc-num">01</span><div><p class="svc-title">Assessoria Contábil</p><p class="svc-desc">Escrituração, balanços e demonstrações organizadas e em dia.</p></div></div>
@@ -218,7 +221,7 @@
         <div aria-hidden="true" style="position: absolute; top: clamp(28px, 4vw, 40px); right: clamp(24px, 5vw, 72px); width: 60px; height: 60px; border-radius: 50%; border: 1.5px solid var(--color-accent-2-400); transform: rotate(-8deg); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 600; font-size: 12px; letter-spacing: .04em; color: var(--color-accent-2-300);">SC</div>
         <div style="position: relative;">
           <p class="eyebrow on-dark"><span class="idx">04</span><span class="rule"></span>Em destaque</p>
-          <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; max-width: 20ch; text-wrap: pretty;">Planejamento tributário</h2>
+          <h2 style="margin: 0; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.14; letter-spacing: -0.015em; color: #fff; max-width: 20ch; text-wrap: pretty;">Planejamento tributário</h2>
         </div>
         <div style="position: relative; display: flex; flex-direction: column; gap: 22px;">
           <p style="margin: 0; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.65; color: rgba(255,255,255,.86); max-width: 48ch;">
@@ -236,7 +239,7 @@
       <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(24px, 4vw, 44px);" data-om-difgrid="1">
         <div data-reveal="1">
           <p class="eyebrow"><span class="idx">05</span><span class="rule"></span>Como trabalhamos</p>
-          <h2 style="margin: 0; font-size: clamp(30px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.02em; max-width: 20ch; text-wrap: pretty;">
+          <h2 style="margin: 0; font-size: clamp(27px, 3.2vw, 44px); line-height: 1.14; letter-spacing: -0.015em; max-width: 22ch; text-wrap: pretty;">
             Você não precisa de alguém apenas para gerar guias.
           </h2>
         </div>
@@ -262,7 +265,7 @@
         </div>
         <div data-reveal="1">
           <p class="eyebrow"><span class="idx">06</span><span class="rule"></span>Sobre a Sousa</p>
-          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em;  text-wrap: pretty;">À frente da Sousa Contabilidade</h2>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 42px); line-height: 1.14; letter-spacing: -0.015em;  text-wrap: pretty;">À frente da Sousa Contabilidade</h2>
           <p style="margin: clamp(22px, 3vw, 30px) 0 0; font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 80%, var(--color-bg));">
             Dyego e Dyogo estão à frente da Sousa Contabilidade desde a fundação do escritório. Quem procura a Sousa fala direto com um dos dois — não com uma central de atendimento, um protocolo ou uma fila de espera.
           </p>
@@ -279,7 +282,7 @@
         <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(24px, 4vw, 48px); align-items: center;" data-om-videogrid="1">
           <div data-reveal="1">
             <p class="eyebrow"><span class="idx">07</span><span class="rule"></span>Apresentação</p>
-            <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.02em; max-width: 20ch; text-wrap: pretty;">Conheça a Sousa Contabilidade</h2>
+            <h2 style="margin: 0; font-size: clamp(26px, 2.8vw, 40px); line-height: 1.14; letter-spacing: -0.015em; max-width: 22ch; text-wrap: pretty;">Conheça a Sousa Contabilidade</h2>
             <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.65; max-width: 42ch; color: color-mix(in srgb, var(--color-text) 74%, var(--color-bg));">
               Um passeio rápido pelo escritório e pela equipe que cuida da contabilidade dos nossos clientes em Feira de Santana.
             </p>
@@ -308,7 +311,7 @@
       <div style="max-width: 1280px; margin: 0 auto;">
         <div data-reveal="1" style="max-width: 860px; margin-bottom: clamp(28px, 4vw, 44px);">
           <p class="eyebrow"><span class="idx">08</span><span class="rule"></span>Estrutura</p>
-          <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 52px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">O escritório e a equipe por trás da assessoria.</h2>
+          <h2 style="margin: 0; font-size: clamp(26px, 3vw, 42px); line-height: 1.14; letter-spacing: -0.015em; text-wrap: balance;">O escritório e a equipe por trás da assessoria.</h2>
         </div>
         <div data-reveal="1" style="display: grid; grid-template-columns: 1fr; gap: clamp(20px, 3vw, 32px);" data-om-galgrid="1">
 
@@ -332,12 +335,16 @@
       <div class="contact-map" data-reveal="1" style="max-width: 1280px; margin: 0 auto;">
         <div>
           <p class="eyebrow"><span class="idx">09</span><span class="rule"></span>Contato</p>
-          <h2 style="margin: 0; font-size: clamp(38px, 5.2vw, 50px); line-height: 1.08; letter-spacing: -0.025em;  text-wrap: pretty;">
+          <h2 style="margin: 0; font-size: clamp(32px, 4vw, 46px); line-height: 1.12; letter-spacing: -0.018em;  text-wrap: pretty;">
             Vamos conversar sobre sua empresa?
           </h2>
           <p style="margin: 24px 0 0; font-size: clamp(16px, 1.35vw, 18px); line-height: 1.75; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 70%, var(--color-bg));">
-            Entre em contato com a Sousa Contabilidade pelos canais disponíveis ou venha até o escritório em Feira de Santana.
+            Entre em contato com a Sousa Contabilidade pelos canais disponíveis ou escolha a unidade mais próxima.
           </p>
+          <div class="location-switch" role="group" aria-label="Escolher unidade">
+            <button type="button" onClick="{{ showFeira }}" aria-pressed="{{ feiraActive }}">Feira de Santana</button>
+            <button type="button" onClick="{{ showAndarai }}" aria-pressed="{{ andaraiActive }}">Andaraí</button>
+          </div>
 
           <div class="contact-card">
             <div class="contact-line">
@@ -354,20 +361,39 @@
             </div>
             <div class="contact-line">
               <span class="contact-icon">03</span>
-              <address style="margin: 0; font-style: normal;">
-                Edifício J &amp; C Comercial<br>
-                R. Los Ângeles, 38 - Sala 03<br>
-                Parque Getúlio Vargas, Feira de Santana/BA
-              </address>
+              <sc-if value="{{ feiraActive }}" hint-placeholder-val="{{ true }}">
+                <address style="margin: 0; font-style: normal;">
+                  Edifício J &amp; C Comercial<br>
+                  R. Los Ângeles, 38 - Sala 03<br>
+                  Parque Getúlio Vargas, Feira de Santana/BA
+                </address>
+              </sc-if>
+              <sc-if value="{{ andaraiActive }}" hint-placeholder-val="{{ false }}">
+                <address style="margin: 0; font-style: normal;">
+                  Rua da Glória, nº 58<br>
+                  Andaraí/BA<br>
+                  CEP 46830-000
+                </address>
+              </sc-if>
             </div>
           </div>
         </div>
 
         <div>
           <div class="map-frame">
-            <iframe title="Mapa da Sousa Contabilidade no Google Maps" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            <sc-if value="{{ feiraActive }}" hint-placeholder-val="{{ true }}">
+              <iframe title="Mapa da unidade de Feira de Santana da Sousa Contabilidade" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </sc-if>
+            <sc-if value="{{ andaraiActive }}" hint-placeholder-val="{{ false }}">
+              <iframe title="Mapa da unidade de Andaraí da Sousa Contabilidade" src="https://www.google.com/maps?q=Rua%20da%20Gl%C3%B3ria%2C%2058%2C%20Andara%C3%AD%2C%20BA%2C%2046830-000&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+            </sc-if>
           </div>
-          <a href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir no Google Maps</a>
+          <sc-if value="{{ feiraActive }}" hint-placeholder-val="{{ true }}">
+            <a href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir Feira no Google Maps</a>
+          </sc-if>
+          <sc-if value="{{ andaraiActive }}" hint-placeholder-val="{{ false }}">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=Rua%20da%20Gl%C3%B3ria%2C%2058%2C%20Andara%C3%AD%2C%20BA%2C%2046830-000" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir Andaraí no Google Maps</a>
+          </sc-if>
         </div>
       </div>
     </section>
@@ -379,7 +405,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(28px, 4vw, 56px);">
         <div>
           <p style="margin: 0; font-family: var(--font-heading); font-weight: 600; font-size: 22px; color: #fff;">Sousa Contabilidade</p>
-          <p style="margin: 10px 0 0; font-size: 14px; color: rgba(255,255,255,.62);">Feira de Santana — BA</p>
+          <p style="margin: 10px 0 0; font-size: 14px; color: rgba(255,255,255,.62);">Feira de Santana e Andaraí — BA</p>
           <p style="margin: 22px 0 0; font-family: var(--font-heading); font-style: italic; font-size: 19px; color: var(--color-accent-300);">Simples. Segura. Ao seu lado.</p>
         </div>
         <div>
@@ -401,21 +427,25 @@
           <p style="margin: 22px 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">Redes</p>
           <div style="display: flex; gap: 18px;">
             <a href="https://www.instagram.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Instagram</a>
-            <a href="https://www.facebook.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Facebook</a>
+            <a href="https://www.facebook.com/sousacontab/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Facebook</a>
           </div>
         </div>
         <div>
-          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">Endereço</p>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">Unidades</p>
           <address style="margin: 0; font-style: normal; font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.82);">
+            Feira de Santana<br>
             Edifício J &amp; C Comercial<br>
             R. Los Ângeles, 38 — Sala 03<br>
             Parque Getúlio Vargas<br>
-            Feira de Santana — BA · 44076-696
+            Feira de Santana — BA · 44076-696<br><br>
+            Andaraí<br>
+            Rua da Glória, nº 58<br>
+            Andaraí — BA · 46830-000
           </address>
         </div>
       </div>
       <p style="margin: clamp(36px, 5vw, 56px) 0 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); font-size: 13px; color: rgba(255,255,255,.5);">
-        © Sousa Contabilidade — Assessoria contábil em Feira de Santana, Bahia.
+        © Sousa Contabilidade — Assessoria contábil na Bahia.
       </p>
     </div>
   </footer>
@@ -438,17 +468,21 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;showVideo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
 class Component extends DCLogic {
-  state = { menuOpen: false, waOpen: false };
+  state = { menuOpen: false, waOpen: false, location: 'feira' };
 
   renderVals() {
     return {
       menuOpen: this.state.menuOpen,
       waOpen: this.state.waOpen,
+      feiraActive: this.state.location === 'feira',
+      andaraiActive: this.state.location === 'andarai',
       showVideo: this.props.showVideo ?? true,
       toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
       closeMenu: () => this.setState({ menuOpen: false }),
       toggleWa: () => this.setState(s => ({ waOpen: !s.waOpen })),
       closeWa: () => this.setState({ waOpen: false }),
+      showFeira: () => this.setState({ location: 'feira' }),
+      showAndarai: () => this.setState({ location: 'andarai' }),
       playIntroVideo: () => {
         const video = document.querySelector('[data-intro-video]');
         const cover = document.querySelector('[data-video-cover]');
