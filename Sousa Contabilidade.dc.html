@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Sousa Contabilidade | Contabilidade em Feira de Santana</title>
+<meta name="description" content="Assessoria contábil para empresas em Feira de Santana. Contabilidade, planejamento tributário, fiscal, departamento pessoal e suporte empresarial.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sousa Contabilidade | Contabilidade em Feira de Santana">
+<meta property="og:description" content="Cuidamos da parte contábil, fiscal e tributária da sua empresa. Atendimento próximo, em Feira de Santana - BA.">
+<meta property="og:image" content="img/equipe-fachada.jpg">
+<meta property="og:locale" content="pt_BR">
+<link rel="stylesheet" href="_ds/broadsheet-d8bdd8bd-af87-48b3-873f-3094a05d1a1e/styles.css">
+<script src="_ds/broadsheet-d8bdd8bd-af87-48b3-873f-3094a05d1a1e/_ds_bundle.js"></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AccountingService","name":"Sousa Contabilidade","image":"img/equipe-fachada.jpg","address":{"@type":"PostalAddress","streetAddress":"R. Los Ângeles, 38 - Sala 03, Edifício J & C Comercial","addressLocality":"Feira de Santana","addressRegion":"BA","postalCode":"44076-696","addressCountry":"BR"},"areaServed":"Feira de Santana - BA","sameAs":["https://www.instagram.com/sousacontab/","https://www.facebook.com/sousacontab/"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"2"}}
+</script>
+<style>
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); overflow-x: hidden; --rule: color-mix(in srgb, var(--color-text) 14%, transparent); }
+  * { box-sizing: border-box; }
+  img { display: block; max-width: 100%; }
+  a { color: var(--color-accent-700); text-decoration: none; }
+  a:hover { color: var(--color-accent); }
+  :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; }
+  ::selection { background: color-mix(in srgb, var(--color-accent) 22%, transparent); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* — ledger system: a numbered eyebrow, ruled lists and matted photos tie every
+     section into one document instead of a stack of unrelated marketing blocks — */
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-accent-700); font-variant-numeric: tabular-nums; }
+  .eyebrow .idx { font-family: var(--font-heading); font-weight: 600; font-size: 13px; letter-spacing: 0; color: var(--color-text); opacity: .4; }
+  .eyebrow .rule { width: 16px; height: 1px; background: var(--color-accent-700); flex: none; }
+  .eyebrow.on-dark { color: var(--color-accent-300); }
+  .eyebrow.on-dark .idx { color: #fff; opacity: .4; }
+  .eyebrow.on-dark .rule { background: var(--color-accent-300); }
+
+  .doc-photo { padding: 10px; border: 1px solid var(--rule); background: var(--color-bg); }
+  .doc-photo img { width: 100%; }
+  .doc-caption { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); }
+  .doc-caption p { margin: 0; font-size: 12px; letter-spacing: .02em; color: color-mix(in srgb, var(--color-text) 62%, var(--color-bg)); }
+  .doc-caption span { flex: none; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent-700); font-variant-numeric: tabular-nums; }
+
+  .hero-facts { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); margin-top: clamp(30px, 4vw, 44px); }
+  .hero-facts > div { padding: 16px 20px; border-left: 1px solid var(--rule); }
+  .hero-facts > div:first-child { border-left: 0; padding-left: 0; }
+  .hero-facts p { margin: 0; }
+  .hero-facts .fact-title { font-family: var(--font-heading); font-weight: 600; font-size: 15px; margin-bottom: 5px; }
+  .hero-facts .fact-body { font-size: 13px; line-height: 1.5; color: color-mix(in srgb, var(--color-text) 66%, var(--color-bg)); }
+  @media (max-width: 700px) {
+    .hero-facts { grid-template-columns: 1fr; border-bottom: 0; }
+    .hero-facts > div { border-left: 0; border-top: 1px solid var(--rule); padding: 14px 0; }
+    .hero-facts > div:first-child { border-top: 0; }
+  }
+
+  .ruled-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+  .ruled-list li { display: flex; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .ruled-list li:last-child { border-bottom: 0; }
+  .ruled-list .num { flex: none; width: 26px; color: var(--color-accent); font-family: var(--font-heading); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .ruled-list .num-title { margin: 0 0 4px; font-family: var(--font-heading); font-weight: 600; font-size: 17px; }
+  .ruled-list .num-body { margin: 0; font-size: 14.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, var(--color-bg)); }
+
+  .svc-grid { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--rule); }
+  .svc-row { display: flex; gap: 18px; padding: 24px 0; border-bottom: 1px solid var(--rule); }
+  .svc-num { flex: none; width: 30px; font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-accent); font-variant-numeric: tabular-nums; }
+  .svc-title { margin: 0 0 6px; font-family: var(--font-heading); font-weight: 600; font-size: 19px; }
+  .svc-desc { margin: 0; font-size: 14.5px; line-height: 1.55; color: color-mix(in srgb, var(--color-text) 68%, var(--color-bg)); }
+  @media (min-width: 760px) {
+    .svc-grid { grid-template-columns: 1fr 1fr; }
+    .svc-row:nth-child(odd) { padding-right: 32px; border-right: 1px solid var(--rule); }
+    .svc-row:nth-child(even) { padding-left: 32px; }
+  }
+</style>
+</helmet>
+
+<div style="font-family: var(--font-body); background: var(--color-bg); position: relative;">
+
+  <header data-om-header="1" style="position: fixed; top: 0; left: 0; right: 0; z-index: 60; transition: background .35s ease, box-shadow .35s ease, backdrop-filter .35s ease;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 16px clamp(18px, 4vw, 48px); display: flex; align-items: center; gap: 24px;">
+      <a href="#inicio" aria-label="Sousa Contabilidade — início" style="display: flex; align-items: center; gap: 12px; margin-right: auto;">
+        <img src="img/logo-sc.jpg" alt="Marca Sousa Contabilidade" width="150" height="150" style="width: 40px; height: 40px; object-fit: contain; mix-blend-mode: multiply;">
+        <span style="display: flex; flex-direction: column; line-height: 1;">
+          <span style="font-family: var(--font-heading); font-weight: 600; font-size: 17px; letter-spacing: .01em; color: var(--color-text);">Sousa Contabilidade</span>
+          <span style="font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: var(--color-accent-700); margin-top: 4px;">Feira de Santana — BA</span>
+        </span>
+      </a>
+      <nav aria-label="Navegação principal" style="display: none; gap: 30px; align-items: center;" data-om-navdesk="1">
+        <a href="#inicio" style="font-size: 15px; color: var(--color-text);" style-hover="color: var(--color-accent)">Início</a>
+        <a href="#servicos" style="font-size: 15px; color: var(--color-text);" style-hover="color: var(--color-accent)">Serviços</a>
+        <a href="#sobre" style="font-size: 15px; color: var(--color-text);" style-hover="color: var(--color-accent)">Sobre</a>
+        <a href="#estrutura" style="font-size: 15px; color: var(--color-text);" style-hover="color: var(--color-accent)">Estrutura</a>
+        <a href="#contato" style="font-size: 15px; color: var(--color-text);" style-hover="color: var(--color-accent)">Contato</a>
+      </nav>
+      <a href="#contato" style="display: none; padding: 11px 20px; background: var(--color-accent); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 14px; border-radius: var(--radius-md); transition: background .2s ease;" style-hover="background: var(--color-accent-600); color: #fff" data-om-ctadesk="1">Fale conosco</a>
+      <button type="button" aria-label="Abrir menu" onClick="{{ toggleMenu }}" data-om-burger="1" style="display: inline-flex; flex-direction: column; justify-content: center; gap: 5px; width: 44px; height: 44px; padding: 0 10px; background: transparent; border: 0; cursor: pointer;">
+        <span style="display: block; height: 1.5px; background: var(--color-text);"></span>
+        <span style="display: block; height: 1.5px; background: var(--color-text);"></span>
+        <span style="display: block; height: 1.5px; background: var(--color-text);"></span>
+      </button>
+    </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <nav aria-label="Navegação" style="background: var(--color-surface); border-top: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent); padding: 12px clamp(18px, 4vw, 48px) 24px; display: flex; flex-direction: column; gap: 2px; box-shadow: var(--shadow-md);">
+        <a href="#inicio" onClick="{{ closeMenu }}" style="padding: 14px 2px; font-family: var(--font-heading); font-size: 20px; color: var(--color-text);">Início</a>
+        <a href="#servicos" onClick="{{ closeMenu }}" style="padding: 14px 2px; font-family: var(--font-heading); font-size: 20px; color: var(--color-text);">Serviços</a>
+        <a href="#sobre" onClick="{{ closeMenu }}" style="padding: 14px 2px; font-family: var(--font-heading); font-size: 20px; color: var(--color-text);">Sobre</a>
+        <a href="#estrutura" onClick="{{ closeMenu }}" style="padding: 14px 2px; font-family: var(--font-heading); font-size: 20px; color: var(--color-text);">Estrutura</a>
+        <a href="#contato" onClick="{{ closeMenu }}" style="padding: 14px 2px; font-family: var(--font-heading); font-size: 20px; color: var(--color-text);">Contato</a>
+        <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="margin-top: 12px; padding: 15px 20px; background: var(--color-accent); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 16px; text-align: center; border-radius: var(--radius-md);">Falar no WhatsApp</a>
+      </nav>
+    </sc-if>
+  </header>
+
+  <main>
+
+    <section id="inicio" style="padding: clamp(112px, 16vw, 160px) clamp(18px, 4vw, 48px) clamp(40px, 7vw, 88px);">
+      <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4.5vw, 52px); align-items: end;" data-om-herogrid="1">
+        <div data-reveal="1">
+          <p class="eyebrow"><span class="idx">01</span><span class="rule"></span>Assessoria contábil · Feira de Santana — BA</p>
+          <h1 style="margin: 0; font-family: var(--font-heading); font-weight: 600; font-size: clamp(36px, 5.2vw, 64px); line-height: 1.08; letter-spacing: -0.02em; text-wrap: pretty; max-width: 15ch;">
+            Sua empresa cresce. A gente cuida dos números.
+          </h1>
+          <p style="margin: clamp(20px, 3vw, 28px) 0 0; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.6; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 82%, var(--color-bg)); text-wrap: pretty;">
+            Contabilidade, fiscal, tributário e departamento pessoal em um só lugar — com prazos em dia e informação clara para você decidir com segurança.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: clamp(26px, 3.5vw, 36px);">
+            <a href="#contato" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 28px; background: var(--color-accent); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 16px; border-radius: var(--radius-md); transition: background .2s ease, transform .2s ease;" style-hover="background: var(--color-accent-600); color: #fff; transform: translateY(-1px)" style-active="background: var(--color-accent-700)">Falar com um contador</a>
+            <a href="#sobre" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; border: 1px solid color-mix(in srgb, var(--color-text) 24%, transparent); color: var(--color-text); font-family: var(--font-heading); font-weight: 600; font-size: 16px; border-radius: var(--radius-md); transition: border-color .2s ease, background .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text)">Conheça a Sousa</a>
+          </div>
+          <div class="hero-facts">
+            <div>
+              <p class="fact-title">Escritório físico</p>
+              <p class="fact-body">Atendimento presencial na Sala 03, de segunda a sexta.</p>
+            </div>
+            <div>
+              <p class="fact-title">Fala direto com os sócios</p>
+              <p class="fact-body">Dyego e Dyogo respondem pessoalmente pelo WhatsApp.</p>
+            </div>
+            <div>
+              <p class="fact-title">Serviço completo</p>
+              <p class="fact-body">Contábil, fiscal, tributário e pessoal em uma assessoria.</p>
+            </div>
+          </div>
+        </div>
+        <div data-reveal="1">
+          <div class="doc-photo">
+            <img src="img/equipe-fachada.jpg" alt="Equipe da Sousa Contabilidade em frente à fachada do escritório em Feira de Santana" width="1080" height="1350" style="height: clamp(320px, 48vw, 580px); object-fit: cover; object-position: 50% 30%;">
+          </div>
+          <div class="doc-caption">
+            <p>Nossa sede — R. Los Ângeles, 38, Parque Getúlio Vargas</p>
+            <span>Fig. 01</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Problema e solução" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
+      <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4.5vw, 56px);" data-om-probgrid="1">
+        <div data-reveal="1">
+          <p class="eyebrow"><span class="idx">02</span><span class="rule"></span>O problema</p>
+          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em; max-width: 22ch; text-wrap: pretty;">Contabilidade não precisa ser uma dor de cabeça.</h2>
+          <ul class="ruled-list" style="margin-top: clamp(28px, 4vw, 40px); max-width: 46ch;">
+            <li><span class="num">01</span><span style="font-size: 16px; align-self: center;">Impostos que ninguém explica direito</span></li>
+            <li><span class="num">02</span><span style="font-size: 16px; align-self: center;">Obrigações e prazos correndo por fora</span></li>
+            <li><span class="num">03</span><span style="font-size: 16px; align-self: center;">Burocracia consumindo o seu dia</span></li>
+            <li><span class="num">04</span><span style="font-size: 16px; align-self: center;">Decisões tomadas sem número na mão</span></li>
+            <li><span class="num">05</span><span style="font-size: 16px; align-self: center;">Contador que só aparece para mandar guia</span></li>
+          </ul>
+        </div>
+        <div data-reveal="1" style="display: flex; flex-direction: column; justify-content: flex-end; gap: clamp(24px, 3vw, 32px);">
+          <p class="eyebrow" style="margin-bottom: 0;"><span class="idx">—</span><span class="rule"></span>A Sousa</p>
+          <p style="margin: 0; font-family: var(--font-heading); font-weight: 600; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.25; letter-spacing: -0.015em; text-wrap: pretty;">
+            Assumimos a rotina contábil, fiscal e trabalhista da sua empresa e colocamos cada obrigação em ordem, com prazo certo e responsável definido.
+          </p>
+          <p style="margin: 0; font-size: 17px; line-height: 1.65; color: color-mix(in srgb, var(--color-text) 78%, var(--color-bg)); max-width: 44ch;">
+            Do início ao fim: abertura, escrituração, apuração, folha, entregas e acompanhamento mês a mês. Você sabe o que precisa pagar, quando e por quê.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
+      <div style="max-width: 1280px; margin: 0 auto;">
+        <div data-reveal="1" style="max-width: 40ch; margin-bottom: clamp(24px, 3.5vw, 36px);">
+          <p class="eyebrow"><span class="idx">03</span><span class="rule"></span>Serviços</p>
+          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em; text-wrap: pretty;">Toda a parte contábil, do início ao fim.</h2>
+        </div>
+        <div data-reveal="1" class="svc-grid">
+          <div class="svc-row"><span class="svc-num">01</span><div><p class="svc-title">Assessoria Contábil</p><p class="svc-desc">Escrituração, balanços e demonstrações organizadas e em dia.</p></div></div>
+          <div class="svc-row"><span class="svc-num">02</span><div><p class="svc-title">Assessoria Fiscal</p><p class="svc-desc">Apuração, notas e entregas mensais sem atraso nem susto.</p></div></div>
+          <div class="svc-row"><span class="svc-num">03</span><div><p class="svc-title">Assessoria Tributária</p><p class="svc-desc">Enquadramento e regime analisados de acordo com a sua operação.</p></div></div>
+          <div class="svc-row"><span class="svc-num">04</span><div><p class="svc-title">Departamento Pessoal</p><p class="svc-desc">Admissões, folha, férias, rescisões e obrigações trabalhistas.</p></div></div>
+          <div class="svc-row"><span class="svc-num">05</span><div><p class="svc-title">Abertura e regularização</p><p class="svc-desc">Abrir a empresa, alterar contrato ou colocar a situação em ordem.</p></div></div>
+          <div class="svc-row"><span class="svc-num">06</span><div><p class="svc-title">Assessoria Financeira</p><p class="svc-desc">Leitura de resultado, custos e margem para decidir com base real.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Planejamento tributário" style="padding: 0 clamp(18px, 4vw, 48px) clamp(40px, 6vw, 72px);">
+      <div data-reveal="1" style="max-width: 1280px; margin: 0 auto; background: var(--color-accent-900); color: #fff; border-radius: var(--radius-md); padding: clamp(32px, 5vw, 64px) clamp(24px, 5vw, 72px); display: grid; grid-template-columns: 1fr; gap: clamp(22px, 3.5vw, 44px); position: relative; overflow: hidden;" data-om-planogrid="1">
+        <div aria-hidden="true" style="position: absolute; top: clamp(28px, 4vw, 40px); right: clamp(24px, 5vw, 72px); width: 60px; height: 60px; border-radius: 50%; border: 1.5px solid var(--color-accent-2-400); transform: rotate(-8deg); display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); font-weight: 600; font-size: 12px; letter-spacing: .04em; color: var(--color-accent-2-300);">SC</div>
+        <div style="position: relative;">
+          <p class="eyebrow on-dark"><span class="idx">04</span><span class="rule"></span>Em destaque</p>
+          <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.1; letter-spacing: -0.02em; color: #fff; max-width: 20ch; text-wrap: pretty;">Planejamento tributário</h2>
+        </div>
+        <div style="position: relative; display: flex; flex-direction: column; gap: 22px;">
+          <p style="margin: 0; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.65; color: rgba(255,255,255,.86); max-width: 48ch;">
+            Nosso foco é ajudar seu negócio a pagar menos impostos de uma forma 100% legal. Analisamos regime, atividade e faturamento para encontrar o caminho tributário mais eficiente para a sua empresa — sempre dentro da legislação.
+          </p>
+          <p style="margin: 0; font-size: 14px; line-height: 1.6; color: rgba(255,255,255,.6); max-width: 48ch;">
+            Sem promessa de economia garantida: cada empresa tem uma realidade. O que garantimos é análise séria e orientação clara antes de qualquer decisão.
+          </p>
+          <a href="#contato" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 50px; padding: 0 26px; background: var(--color-accent); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 16px; border-radius: var(--radius-md); transition: background .2s ease;" style-hover="background: var(--color-accent-400); color: var(--color-accent-900)">Pedir uma análise</a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Diferencial" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
+      <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(24px, 4vw, 44px);" data-om-difgrid="1">
+        <div data-reveal="1">
+          <p class="eyebrow"><span class="idx">05</span><span class="rule"></span>Como trabalhamos</p>
+          <h2 style="margin: 0; font-size: clamp(30px, 4vw, 52px); line-height: 1.08; letter-spacing: -0.02em; max-width: 20ch; text-wrap: pretty;">
+            Você não precisa de alguém apenas para gerar guias.
+          </h2>
+        </div>
+        <ul data-reveal="1" class="ruled-list" style="max-width: 640px;">
+          <li><span class="num">01</span><div><p class="num-title">Acompanhamento próximo</p><p class="num-body">Contato direto, resposta rápida e uma relação de longo prazo.</p></div></li>
+          <li><span class="num">02</span><div><p class="num-title">Visão estratégica</p><p class="num-body">Olhamos o negócio, não só a obrigação do mês.</p></div></li>
+          <li><span class="num">03</span><div><p class="num-title">Comunicação simples</p><p class="num-body">Explicação sem juridiquês, no idioma de quem toca a empresa.</p></div></li>
+          <li><span class="num">04</span><div><p class="num-title">Organização e segurança</p><p class="num-body">Documentação em ordem e tranquilidade para crescer.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sobre" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
+      <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(28px, 4.5vw, 52px); align-items: center;" data-om-sobregrid="1">
+        <div data-reveal="1">
+          <div class="doc-photo">
+            <img src="img/dyego-dyogo.jpg" alt="Dyego e Dyogo, à frente da Sousa Contabilidade, no escritório em Feira de Santana" width="1200" height="1600" loading="lazy" decoding="async" style="height: clamp(340px, 46vw, 580px); object-fit: cover; object-position: 50% 24%;">
+          </div>
+          <div class="doc-caption">
+            <p>Dyego &amp; Dyogo</p>
+            <span>Fig. 02</span>
+          </div>
+        </div>
+        <div data-reveal="1">
+          <p class="eyebrow"><span class="idx">06</span><span class="rule"></span>Sobre a Sousa</p>
+          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em; max-width: 22ch; text-wrap: pretty;">À frente da Sousa Contabilidade</h2>
+          <p style="margin: clamp(22px, 3vw, 30px) 0 0; font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 80%, var(--color-bg));">
+            Dyego e Dyogo estão à frente da Sousa Contabilidade desde a fundação do escritório. Quem procura a Sousa fala direto com um dos dois — não com uma central de atendimento, um protocolo ou uma fila de espera.
+          </p>
+          <div style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: clamp(28px, 4vw, 36px);">
+            <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-weight: 600; font-size: 16px; border-bottom: 1px solid var(--color-accent); padding-bottom: 3px;">Falar com Dyego</a>
+            <a href="https://api.whatsapp.com/send?phone=5575982552255&amp;text=Ol%C3%A1%20Dyogo%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="font-family: var(--font-heading); font-weight: 600; font-size: 16px; border-bottom: 1px solid var(--color-accent); padding-bottom: 3px;">Falar com Dyogo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ showVideo }}" hint-placeholder-val="{{ true }}">
+      <section aria-label="Vídeo de apresentação" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
+        <div style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: clamp(24px, 4vw, 48px); align-items: center;" data-om-videogrid="1">
+          <div data-reveal="1">
+            <p class="eyebrow"><span class="idx">07</span><span class="rule"></span>Apresentação</p>
+            <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 46px); line-height: 1.08; letter-spacing: -0.02em; max-width: 20ch; text-wrap: pretty;">Conheça a Sousa Contabilidade</h2>
+            <p style="margin: 22px 0 0; font-size: 17px; line-height: 1.65; max-width: 42ch; color: color-mix(in srgb, var(--color-text) 74%, var(--color-bg));">
+              Um passeio rápido pelo escritório e pela equipe que cuida da contabilidade dos nossos clientes em Feira de Santana.
+            </p>
+            <a href="#contato" style="display: inline-flex; align-items: center; min-height: 52px; margin-top: 28px; padding: 0 26px; background: var(--color-accent); color: #fff; font-family: var(--font-heading); font-weight: 600; font-size: 16px; border-radius: var(--radius-md); transition: background .2s ease;" style-hover="background: var(--color-accent-600); color: #fff">Falar com a equipe</a>
+          </div>
+          <div data-reveal="1">
+            <div style="position: relative; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); background: #000;">
+              <video data-intro-video="1" src="./uploads/snapinsta-1787932625841.mp4" aria-label="Vídeo de apresentação da Sousa Contabilidade" controls playsinline webkit-playsinline preload="metadata" style="display: block; width: 100%; height: clamp(340px, 46vw, 560px); object-fit: contain; background: #000;">
+              Seu navegador não suporta vídeo HTML5. <a href="./uploads/snapinsta-1787932625841.mp4">Baixe o vídeo de apresentação</a>.
+              </video>
+              <button type="button" data-video-cover="1" onClick="{{ playIntroVideo }}" aria-label="Reproduzir vídeo de apresentação" style="position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #000;">
+                <img src="uploads/494868404_18064666964505441_749568363372808671_n.jpg" alt="Capa do vídeo de apresentação da Sousa Contabilidade" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; object-position: 50% 36%; opacity: .92;">
+                <span style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,48,62,.72), rgba(10,48,62,.08) 58%);"></span>
+                <span style="position: absolute; left: 24px; bottom: 24px; right: 24px; display: flex; align-items: center; gap: 16px; color: #fff; text-align: left;">
+                  <span style="display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; flex: none; border: 1.5px solid rgba(255,255,255,.85); border-radius: 50%; font-size: 15px; padding-left: 4px;">▶</span>
+                  <span style="font-family: var(--font-heading); font-weight: 600; font-size: 17px; line-height: 1.3;">Vídeo de apresentação<br><span style="font-weight: 400; font-size: 13px; opacity: .8;">Reproduz aqui na página</span></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <section id="estrutura" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
+      <div style="max-width: 1280px; margin: 0 auto;">
+        <div data-reveal="1" style="max-width: 34ch; margin-bottom: clamp(24px, 3.5vw, 36px);">
+          <p class="eyebrow"><span class="idx">08</span><span class="rule"></span>Estrutura</p>
+          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em; text-wrap: pretty;">O escritório e a equipe por trás da assessoria.</h2>
+        </div>
+        <div data-reveal="1" style="display: grid; grid-template-columns: 1fr; gap: clamp(20px, 3vw, 32px);" data-om-galgrid="1">
+
+          <figure style="margin: 0;">
+            <div class="doc-photo">
+              <img src="img/colaboradora.jpg" alt="Colaboradora da Sousa Contabilidade atendendo na estação de trabalho" width="900" height="1600" loading="lazy" decoding="async" style="height: clamp(280px, 40vw, 500px); object-fit: cover; object-position: 50% 34%;">
+            </div>
+            <figcaption class="doc-caption"><p>Atendimento presencial, de segunda a sexta.</p><span>Fig. 04</span></figcaption>
+          </figure>
+          <figure style="margin: 0;">
+            <div class="doc-photo">
+              <img src="img/socio-2.jpg" alt="Sócio da Sousa Contabilidade trabalhando na estação de trabalho do escritório" width="900" height="1200" loading="lazy" decoding="async" style="height: clamp(280px, 40vw, 500px); object-fit: cover; object-position: 50% 30%;">
+            </div>
+            <figcaption class="doc-caption"><p>Apuração e conferência, mês a mês.</p><span>Fig. 05</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px) clamp(40px, 6vw, 80px);">
+      <div data-reveal="1" style="max-width: 1280px; margin: 0 auto; background: var(--color-accent-900); color: #fff; border-radius: var(--radius-md); padding: clamp(36px, 6vw, 88px) clamp(24px, 5vw, 72px);">
+        <p class="eyebrow on-dark"><span class="idx">09</span><span class="rule"></span>Contato</p>
+        <h2 style="margin: 0; font-size: clamp(28px, 4vw, 54px); line-height: 1.08; letter-spacing: -0.025em; color: #fff; max-width: 24ch; text-wrap: pretty;">
+          Enquanto você cuida da sua empresa, nós cuidamos da contabilidade.
+        </h2>
+        <p style="margin: 22px 0 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: rgba(255,255,255,.78); max-width: 44ch;">
+          Sem formulário. Escolha com quem você prefere falar e mande sua dúvida agora mesmo pelo WhatsApp.
+        </p>
+        <p style="margin: clamp(32px, 4vw, 48px) 0 16px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-300);">Com quem deseja falar?</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 720px;">
+          <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; min-height: 76px; justify-content: center; padding: 16px 22px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-md); color: #fff; transition: background .2s ease, border-color .2s ease, transform .2s ease;" style-hover="background: var(--color-accent); border-color: var(--color-accent); color: #fff; transform: translateY(-2px)">
+            <span style="font-family: var(--font-heading); font-weight: 600; font-size: 20px;">Dyego</span>
+            <span style="font-size: 13px; opacity: .78;">Falar no WhatsApp</span>
+          </a>
+          <a href="https://api.whatsapp.com/send?phone=5575982552255&amp;text=Ol%C3%A1%20Dyogo%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; min-height: 76px; justify-content: center; padding: 16px 22px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-md); color: #fff; transition: background .2s ease, border-color .2s ease, transform .2s ease;" style-hover="background: var(--color-accent); border-color: var(--color-accent); color: #fff; transform: translateY(-2px)">
+            <span style="font-family: var(--font-heading); font-weight: 600; font-size: 20px;">Dyogo</span>
+            <span style="font-size: 13px; opacity: .78;">Falar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="Endereço e localização" style="padding: clamp(24px, 4vw, 48px) clamp(18px, 4vw, 48px) clamp(56px, 8vw, 104px);">
+      <div data-reveal="1" style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(28px, 4vw, 56px); align-items: start;">
+        <div>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-700);">Onde estamos</p>
+          <p style="margin: 0; font-family: var(--font-heading); font-weight: 600; font-size: 22px;">Sousa Contabilidade</p>
+          <address style="margin: 12px 0 0; font-style: normal; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 76%, var(--color-bg));">
+            Edifício J &amp; C Comercial<br>
+            R. Los Ângeles, 38 — Sala 03<br>
+            Parque Getúlio Vargas<br>
+            Feira de Santana — BA · 44076-696
+          </address>
+          <a href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; margin-top: 22px; padding: 0 24px; border: 1px solid color-mix(in srgb, var(--color-text) 24%, transparent); border-radius: var(--radius-md); font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-text); transition: border-color .2s ease, background .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text)">Como chegar</a>
+        </div>
+        <div>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-700);">Atendimento</p>
+          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 76%, var(--color-bg)); max-width: 34ch;">
+            Presencial no escritório em Feira de Santana e à distância para clientes de outras cidades. O primeiro contato é sempre pelo WhatsApp.
+          </p>
+        </div>
+        <div>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-700);">Redes</p>
+          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+            <a href="https://www.instagram.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 16px;">Instagram — @sousacontab</a>
+            <a href="https://www.facebook.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 16px;">Facebook — /sousacontab</a>
+          </div>
+        </div>
+        <div style="grid-column: 1 / -1; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--color-surface);">
+          <iframe title="Mapa da Sousa Contabilidade no Google Maps" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" width="100%" height="390" style="display: block; width: 100%; height: clamp(300px, 42vw, 430px); border: 0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="background: var(--color-accent-900); color: #fff; padding: clamp(44px, 6vw, 80px) clamp(18px, 4vw, 48px) 32px;">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: clamp(28px, 4vw, 56px);">
+        <div>
+          <p style="margin: 0; font-family: var(--font-heading); font-weight: 600; font-size: 22px; color: #fff;">Sousa Contabilidade</p>
+          <p style="margin: 10px 0 0; font-size: 14px; color: rgba(255,255,255,.62);">Feira de Santana — BA</p>
+          <p style="margin: 22px 0 0; font-family: var(--font-heading); font-style: italic; font-size: 19px; color: var(--color-accent-300);">Simples. Segura. Ao seu lado.</p>
+        </div>
+        <div>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">Links rápidos</p>
+          <div style="display: flex; flex-direction: column; gap: 9px; align-items: flex-start;">
+            <a href="#inicio" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Início</a>
+            <a href="#servicos" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Serviços</a>
+            <a href="#sobre" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Sobre</a>
+            <a href="#estrutura" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Estrutura</a>
+            <a href="#contato" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Contato</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">WhatsApp</p>
+          <div style="display: flex; flex-direction: column; gap: 9px; align-items: flex-start;">
+            <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Falar com Dyego</a>
+            <a href="https://api.whatsapp.com/send?phone=5575982552255&amp;text=Ol%C3%A1%20Dyogo%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Falar com Dyogo</a>
+          </div>
+          <p style="margin: 22px 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">Redes</p>
+          <div style="display: flex; gap: 18px;">
+            <a href="https://www.instagram.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Instagram</a>
+            <a href="https://www.facebook.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 15px; color: rgba(255,255,255,.82);" style-hover="color: #fff">Facebook</a>
+          </div>
+        </div>
+        <div>
+          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.5);">Endereço</p>
+          <address style="margin: 0; font-style: normal; font-size: 15px; line-height: 1.7; color: rgba(255,255,255,.82);">
+            Edifício J &amp; C Comercial<br>
+            R. Los Ângeles, 38 — Sala 03<br>
+            Parque Getúlio Vargas<br>
+            Feira de Santana — BA · 44076-696
+          </address>
+        </div>
+      </div>
+      <p style="margin: clamp(36px, 5vw, 56px) 0 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.14); font-size: 13px; color: rgba(255,255,255,.5);">
+        © Sousa Contabilidade — Assessoria contábil em Feira de Santana, Bahia.
+      </p>
+    </div>
+  </footer>
+
+  <div style="position: fixed; right: clamp(14px, 2.5vw, 28px); bottom: clamp(14px, 2.5vw, 28px); z-index: 70; display: flex; flex-direction: column; align-items: flex-end; gap: 10px;">
+    <sc-if value="{{ waOpen }}" hint-placeholder-val="{{ false }}">
+      <div role="dialog" aria-label="Escolha com quem falar" style="width: 232px; background: var(--color-surface); border-radius: var(--radius-md); box-shadow: var(--shadow-lg); padding: 14px; display: flex; flex-direction: column; gap: 8px;">
+        <p style="margin: 0 0 2px; font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: var(--color-accent-700);">Com quem deseja falar?</p>
+        <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" onClick="{{ closeWa }}" style="display: flex; align-items: center; min-height: 46px; padding: 0 14px; border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent); border-radius: var(--radius-md); font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-text); transition: background .2s ease, border-color .2s ease;" style-hover="background: color-mix(in srgb, var(--color-accent) 10%, transparent); border-color: var(--color-accent); color: var(--color-text)">Falar com Dyego</a>
+        <a href="https://api.whatsapp.com/send?phone=5575982552255&amp;text=Ol%C3%A1%20Dyogo%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" onClick="{{ closeWa }}" style="display: flex; align-items: center; min-height: 46px; padding: 0 14px; border: 1px solid color-mix(in srgb, var(--color-text) 16%, transparent); border-radius: var(--radius-md); font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-text); transition: background .2s ease, border-color .2s ease;" style-hover="background: color-mix(in srgb, var(--color-accent) 10%, transparent); border-color: var(--color-accent); color: var(--color-text)">Falar com Dyogo</a>
+      </div>
+    </sc-if>
+    <button type="button" aria-label="Abrir opções de WhatsApp" onClick="{{ toggleWa }}" style="display: inline-flex; align-items: center; gap: 9px; min-height: 48px; padding: 0 18px; background: var(--color-accent-900); color: #fff; border: 0; border-radius: 999px; box-shadow: var(--shadow-md); font-family: var(--font-heading); font-weight: 600; font-size: 15px; cursor: pointer; transition: background .2s ease, transform .2s ease;" style-hover="background: var(--color-accent); transform: translateY(-1px)">
+      <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #45d268;"></span>
+      WhatsApp
+    </button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showVideo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Conteúdo&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, waOpen: false };
+
+  renderVals() {
+    return {
+      menuOpen: this.state.menuOpen,
+      waOpen: this.state.waOpen,
+      showVideo: this.props.showVideo ?? true,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      toggleWa: () => this.setState(s => ({ waOpen: !s.waOpen })),
+      closeWa: () => this.setState({ waOpen: false }),
+      playIntroVideo: () => {
+        const video = document.querySelector('[data-intro-video]');
+        const cover = document.querySelector('[data-video-cover]');
+        if (cover) cover.style.display = 'none';
+        if (!video) return;
+        video.controls = true;
+        video.play().catch(() => {
+          if (cover) cover.style.display = 'block';
+        });
+      }
+    };
+  }
+
+  componentDidMount() {
+    const root = document.body;
+    const header = root.querySelector('[data-om-header]');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const onScroll = () => {
+      if (!header) return;
+      const solid = window.scrollY > 24;
+      header.style.background = solid ? 'color-mix(in srgb, var(--color-surface) 92%, transparent)' : 'transparent';
+      header.style.backdropFilter = solid ? 'saturate(1.1) blur(10px)' : 'none';
+      header.style.boxShadow = solid ? 'var(--shadow-sm)' : 'none';
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this._onScroll = onScroll;
+
+    const applyLayout = () => {
+      const w = window.innerWidth;
+      const desk = w >= 900;
+      const nav = root.querySelector('[data-om-navdesk]');
+      const cta = root.querySelector('[data-om-ctadesk]');
+      const burger = root.querySelector('[data-om-burger]');
+      if (nav) nav.style.display = desk ? 'flex' : 'none';
+      if (cta) cta.style.display = desk ? 'inline-flex' : 'none';
+      if (burger) burger.style.display = desk ? 'none' : 'inline-flex';
+      if (desk && this.state.menuOpen) this.setState({ menuOpen: false });
+
+      const set = (sel, cols) => { const el = root.querySelector(sel); if (el) el.style.gridTemplateColumns = cols; };
+      set('[data-om-herogrid]', desk ? '1.06fr 0.94fr' : '1fr');
+      set('[data-om-probgrid]', desk ? '1fr 1fr' : '1fr');
+      set('[data-om-difgrid]', desk ? '0.7fr 1fr' : '1fr');
+      set('[data-om-planogrid]', desk ? '0.85fr 1.15fr' : '1fr');
+      set('[data-om-sobregrid]', desk ? '0.92fr 1.08fr' : '1fr');
+      set('[data-om-videogrid]', desk ? '1fr 0.85fr' : '1fr');
+      set('[data-om-galgrid]', w >= 760 ? 'repeat(2, 1fr)' : '1fr');
+      const big = root.querySelector('[data-om-galbig]');
+      if (big) big.style.gridColumn = w >= 760 ? 'span 2' : 'span 1';
+    };
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+    this._applyLayout = applyLayout;
+
+    const items = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (reduce || !('IntersectionObserver' in window)) {
+      items.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px 80px 0px', threshold: 0 });
+    items.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.98) return;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(10px)';
+      el.style.transition = 'opacity .4s ease-out, transform .4s ease-out';
+      io.observe(el);
+    });
+    this._io = io;
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._applyLayout) window.removeEventListener('resize', this._applyLayout);
+    if (this._io) this._io.disconnect();
+  }
+}
+</script>
+</body>
+</html>
