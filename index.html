@@ -507,23 +507,44 @@ class Component extends DCLogic {
       items.forEach(el => {
         el.style.opacity = '1';
         el.style.transform = 'none';
+        el.style.filter = 'none';
       });
       return;
     }
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (!e.isIntersecting) return;
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'none';
-        io.unobserve(e.target);
+        requestAnimationFrame(() => {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'none';
+          e.target.style.filter = 'none';
+          Array.from(e.target.querySelectorAll('[data-reveal-child]')).forEach((child) => {
+            child.style.opacity = '1';
+            child.style.transform = 'none';
+            child.style.filter = 'none';
+          });
+          io.unobserve(e.target);
+        });
       });
-    }, { rootMargin: '0px 0px 80px 0px', threshold: 0 });
-    items.forEach((el) => {
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.14 });
+    items.forEach((el, index) => {
       const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight * 0.98) return;
+      if (r.top < window.innerHeight * 0.92) return;
       el.style.opacity = '0';
-      el.style.transform = 'translateY(10px)';
-      el.style.transition = 'opacity .4s ease-out, transform .4s ease-out';
+      el.style.transform = 'translateY(54px) scale(.96)';
+      el.style.filter = 'blur(8px)';
+      el.style.transition = 'opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1), filter 1s cubic-bezier(.16,1,.3,1)';
+      el.style.transitionDelay = `${Math.min(index % 4, 3) * 90}ms`;
+      el.style.willChange = 'opacity, transform, filter';
+      Array.from(el.children).slice(0, 6).forEach((child, childIndex) => {
+        child.setAttribute('data-reveal-child', '1');
+        child.style.opacity = '0';
+        child.style.transform = 'translateY(22px)';
+        child.style.filter = 'blur(4px)';
+        child.style.transition = 'opacity .85s cubic-bezier(.16,1,.3,1), transform .85s cubic-bezier(.16,1,.3,1), filter .85s cubic-bezier(.16,1,.3,1)';
+        child.style.transitionDelay = `${260 + childIndex * 95}ms`;
+        child.style.willChange = 'opacity, transform, filter';
+      });
       io.observe(el);
     });
     this._io = io;
