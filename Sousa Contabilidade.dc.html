@@ -22,7 +22,7 @@
 </script>
 <style>
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--color-bg); color: var(--color-text); overflow-x: hidden; --rule: color-mix(in srgb, var(--color-text) 14%, transparent); }
+  body { margin: 0; background: var(--color-bg); color: var(--color-text); overflow-x: hidden; --rule: color-mix(in srgb, var(--color-text) 14%, transparent); --radius-sm: 10px; --radius-md: 18px; --radius-lg: 26px; }
   * { box-sizing: border-box; }
   img { display: block; max-width: 100%; }
   a { color: var(--color-accent-700); text-decoration: none; }
@@ -40,8 +40,8 @@
   .eyebrow.on-dark .idx { color: #fff; opacity: .4; }
   .eyebrow.on-dark .rule { background: var(--color-accent-300); }
 
-  .doc-photo { padding: 10px; border: 1px solid var(--rule); background: var(--color-bg); }
-  .doc-photo img { width: 100%; }
+  .doc-photo { padding: 10px; border: 1px solid var(--rule); background: var(--color-bg); border-radius: var(--radius-lg); overflow: hidden; }
+  .doc-photo img { width: 100%; border-radius: calc(var(--radius-lg) - 10px); }
   .doc-caption { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--rule); }
   .doc-caption p { margin: 0; font-size: 12px; letter-spacing: .02em; color: color-mix(in srgb, var(--color-text) 62%, var(--color-bg)); }
   .doc-caption span { flex: none; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--color-accent-700); font-variant-numeric: tabular-nums; }
@@ -74,6 +74,17 @@
     .svc-grid { grid-template-columns: 1fr 1fr; }
     .svc-row:nth-child(odd) { padding-right: 32px; border-right: 1px solid var(--rule); }
     .svc-row:nth-child(even) { padding-left: 32px; }
+  }
+
+  .contact-map { display: grid; grid-template-columns: 1fr; gap: clamp(28px, 5vw, 64px); align-items: start; }
+  .contact-card { margin-top: clamp(24px, 4vw, 32px); padding: clamp(24px, 4vw, 34px); background: var(--color-accent-900); color: #fff; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: grid; gap: 18px; }
+  .contact-card a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
+  .contact-line { display: grid; grid-template-columns: 24px 1fr; gap: 12px; align-items: start; font-size: 15.5px; line-height: 1.55; }
+  .contact-icon { width: 24px; color: var(--color-accent-300); font-family: var(--font-heading); font-weight: 600; text-align: center; }
+  .map-frame { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--color-surface); min-height: clamp(320px, 38vw, 420px); }
+  .map-frame iframe { display: block; width: 100%; height: clamp(320px, 38vw, 420px); border: 0; }
+  @media (min-width: 900px) {
+    .contact-map { grid-template-columns: .72fr 1fr; }
   }
 </style>
 </helmet>
@@ -293,9 +304,9 @@
 
     <section id="estrutura" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px);">
       <div style="max-width: 1280px; margin: 0 auto;">
-        <div data-reveal="1" style="max-width: 34ch; margin-bottom: clamp(24px, 3.5vw, 36px);">
+        <div data-reveal="1" style="max-width: 860px; margin-bottom: clamp(28px, 4vw, 44px);">
           <p class="eyebrow"><span class="idx">08</span><span class="rule"></span>Estrutura</p>
-          <h2 style="margin: 0; font-size: clamp(30px, 3.8vw, 50px); line-height: 1.08; letter-spacing: -0.02em; text-wrap: pretty;">O escritório e a equipe por trás da assessoria.</h2>
+          <h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 52px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">O escritório e a equipe por trás da assessoria.</h2>
         </div>
         <div data-reveal="1" style="display: grid; grid-template-columns: 1fr; gap: clamp(20px, 3vw, 32px);" data-om-galgrid="1">
 
@@ -303,69 +314,58 @@
             <div class="doc-photo">
               <img src="img/colaboradora.jpg" alt="Colaboradora da Sousa Contabilidade atendendo na estação de trabalho" width="900" height="1600" loading="lazy" decoding="async" style="height: clamp(280px, 40vw, 500px); object-fit: cover; object-position: 50% 34%;">
             </div>
-            <figcaption class="doc-caption"><p>Atendimento presencial, de segunda a sexta.</p><span>Fig. 04</span></figcaption>
+            <figcaption class="doc-caption"><p>Atendimento presencial, de segunda a sexta.</p><span>Fig. 03</span></figcaption>
           </figure>
           <figure style="margin: 0;">
             <div class="doc-photo">
               <img src="img/socio-2.jpg" alt="Sócio da Sousa Contabilidade trabalhando na estação de trabalho do escritório" width="900" height="1200" loading="lazy" decoding="async" style="height: clamp(280px, 40vw, 500px); object-fit: cover; object-position: 50% 30%;">
             </div>
-            <figcaption class="doc-caption"><p>Apuração e conferência, mês a mês.</p><span>Fig. 05</span></figcaption>
+            <figcaption class="doc-caption"><p>Apuração e conferência, mês a mês.</p><span>Fig. 04</span></figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <section id="contato" style="padding: clamp(40px, 6vw, 72px) clamp(18px, 4vw, 48px) clamp(40px, 6vw, 80px);">
-      <div data-reveal="1" style="max-width: 1280px; margin: 0 auto; background: var(--color-accent-900); color: #fff; border-radius: var(--radius-md); padding: clamp(36px, 6vw, 88px) clamp(24px, 5vw, 72px);">
-        <p class="eyebrow on-dark"><span class="idx">09</span><span class="rule"></span>Contato</p>
-        <h2 style="margin: 0; font-size: clamp(28px, 4vw, 54px); line-height: 1.08; letter-spacing: -0.025em; color: #fff; max-width: 24ch; text-wrap: pretty;">
-          Enquanto você cuida da sua empresa, nós cuidamos da contabilidade.
-        </h2>
-        <p style="margin: 22px 0 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.6; color: rgba(255,255,255,.78); max-width: 44ch;">
-          Sem formulário. Escolha com quem você prefere falar e mande sua dúvida agora mesmo pelo WhatsApp.
-        </p>
-        <p style="margin: clamp(32px, 4vw, 48px) 0 16px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-300);">Com quem deseja falar?</p>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; max-width: 720px;">
-          <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; min-height: 76px; justify-content: center; padding: 16px 22px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-md); color: #fff; transition: background .2s ease, border-color .2s ease, transform .2s ease;" style-hover="background: var(--color-accent); border-color: var(--color-accent); color: #fff; transform: translateY(-2px)">
-            <span style="font-family: var(--font-heading); font-weight: 600; font-size: 20px;">Dyego</span>
-            <span style="font-size: 13px; opacity: .78;">Falar no WhatsApp</span>
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=5575982552255&amp;text=Ol%C3%A1%20Dyogo%2C%20tudo%20bem%3F%20Vim%20pelo%20Instagram%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener" style="display: flex; flex-direction: column; gap: 4px; min-height: 76px; justify-content: center; padding: 16px 22px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.22); border-radius: var(--radius-md); color: #fff; transition: background .2s ease, border-color .2s ease, transform .2s ease;" style-hover="background: var(--color-accent); border-color: var(--color-accent); color: #fff; transform: translateY(-2px)">
-            <span style="font-family: var(--font-heading); font-weight: 600; font-size: 20px;">Dyogo</span>
-            <span style="font-size: 13px; opacity: .78;">Falar no WhatsApp</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section aria-label="Endereço e localização" style="padding: clamp(24px, 4vw, 48px) clamp(18px, 4vw, 48px) clamp(56px, 8vw, 104px);">
-      <div data-reveal="1" style="max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(28px, 4vw, 56px); align-items: start;">
+    <section id="contato" aria-label="Contato e localização" style="padding: clamp(64px, 9vw, 112px) clamp(18px, 4vw, 48px); background: color-mix(in srgb, var(--color-bg) 86%, #fff);">
+      <div class="contact-map" data-reveal="1" style="max-width: 1280px; margin: 0 auto;">
         <div>
-          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-700);">Onde estamos</p>
-          <p style="margin: 0; font-family: var(--font-heading); font-weight: 600; font-size: 22px;">Sousa Contabilidade</p>
-          <address style="margin: 12px 0 0; font-style: normal; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 76%, var(--color-bg));">
-            Edifício J &amp; C Comercial<br>
-            R. Los Ângeles, 38 — Sala 03<br>
-            Parque Getúlio Vargas<br>
-            Feira de Santana — BA · 44076-696
-          </address>
-          <a href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 48px; margin-top: 22px; padding: 0 24px; border: 1px solid color-mix(in srgb, var(--color-text) 24%, transparent); border-radius: var(--radius-md); font-family: var(--font-heading); font-weight: 600; font-size: 15px; color: var(--color-text); transition: border-color .2s ease, background .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text)">Como chegar</a>
-        </div>
-        <div>
-          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-700);">Atendimento</p>
-          <p style="margin: 0; font-size: 16px; line-height: 1.7; color: color-mix(in srgb, var(--color-text) 76%, var(--color-bg)); max-width: 34ch;">
-            Presencial no escritório em Feira de Santana e à distância para clientes de outras cidades. O primeiro contato é sempre pelo WhatsApp.
+          <p class="eyebrow"><span class="idx">09</span><span class="rule"></span>Contato</p>
+          <h2 style="margin: 0; font-size: clamp(38px, 5.2vw, 50px); line-height: 1.08; letter-spacing: -0.025em;  text-wrap: pretty;">
+            Vamos conversar sobre sua empresa?
+          </h2>
+          <p style="margin: 24px 0 0; font-size: clamp(16px, 1.35vw, 18px); line-height: 1.75; max-width: 46ch; color: color-mix(in srgb, var(--color-text) 70%, var(--color-bg));">
+            Entre em contato com a Sousa Contabilidade pelos canais disponíveis ou venha até o escritório em Feira de Santana.
           </p>
-        </div>
-        <div>
-          <p style="margin: 0 0 14px; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--color-accent-700);">Redes</p>
-          <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
-            <a href="https://www.instagram.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 16px;">Instagram — @sousacontab</a>
-            <a href="https://www.facebook.com/sousacontab/" target="_blank" rel="noopener" style="font-size: 16px;">Facebook — /sousacontab</a>
+
+          <div class="contact-card">
+            <div class="contact-line">
+              <span class="contact-icon">01</span>
+              <div>
+                <a href="https://api.whatsapp.com/send?phone=5575992314406&amp;text=Ol%C3%A1%20Dyego%2C%20tudo%20bem%3F%20Vim%20pelo%20site%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener">Falar com Dyego no WhatsApp</a>
+              </div>
+            </div>
+            <div class="contact-line">
+              <span class="contact-icon">02</span>
+              <div>
+                <a href="https://api.whatsapp.com/send?phone=5575982552255&amp;text=Ol%C3%A1%20Dyogo%2C%20tudo%20bem%3F%20Vim%20pelo%20site%2C%20quero%20tirar%20algumas%20d%C3%BAvidas" target="_blank" rel="noopener">Falar com Dyogo no WhatsApp</a>
+              </div>
+            </div>
+            <div class="contact-line">
+              <span class="contact-icon">03</span>
+              <address style="margin: 0; font-style: normal;">
+                Edifício J &amp; C Comercial<br>
+                R. Los Ângeles, 38 - Sala 03<br>
+                Parque Getúlio Vargas, Feira de Santana/BA
+              </address>
+            </div>
           </div>
         </div>
-        <div style="grid-column: 1 / -1; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-lg); background: var(--color-surface);">
-          <iframe title="Mapa da Sousa Contabilidade no Google Maps" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" width="100%" height="390" style="display: block; width: 100%; height: clamp(300px, 42vw, 430px); border: 0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+
+        <div>
+          <div class="map-frame">
+            <iframe title="Mapa da Sousa Contabilidade no Google Maps" src="https://www.google.com/maps?cid=10950366007326399690&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <a href="https://www.google.com/maps/place/Sousa+Contabilidade/data=!4m2!3m1!1s0x0:0x97f783ddbb33dcca?sa=X&amp;ved=1t:2428&amp;ictx=111" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 46px; margin-top: 16px; padding: 0 22px; border: 1px solid color-mix(in srgb, var(--color-text) 18%, transparent); border-radius: 999px; font-family: var(--font-heading); font-weight: 600; font-size: 14px; color: var(--color-text); transition: border-color .2s ease, background .2s ease, transform .2s ease;" style-hover="border-color: var(--color-accent); background: color-mix(in srgb, var(--color-accent) 8%, transparent); color: var(--color-text); transform: translateY(-1px)">Abrir no Google Maps</a>
         </div>
       </div>
     </section>
