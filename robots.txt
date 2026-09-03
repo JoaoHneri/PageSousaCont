@@ -1,4 +1,5 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
-Sitemap: https://page-sousa-cont.vercel.app/sitemap.xml
+Sitemap: https://sousacontabilidade.net/sitemap.xml
+
